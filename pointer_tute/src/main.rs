@@ -1,8 +1,17 @@
 fn main() {
-    con_usage();
+    use_boxt();
+    recursive_type_with_known_size();
     use_box_t_as_ref();
     make_my_box();
+    clean_up_drop_trait();
 }
+
+
+fn use_boxt() {
+    let b = Box::new(5);
+    println!("b = {}", b);
+}
+
 
 enum List {
     Cons(i32, Box<List>),
@@ -11,12 +20,8 @@ enum List {
 
 use crate::List::{Cons, Nil};
 
-fn con_usage() {
+fn recursive_type_with_known_size() {
     let list = Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
-
-    let b = Box::new(5);
-    println!("b = {}", b);
-
 }
 
 
@@ -55,3 +60,28 @@ fn make_my_box() {
     assert_eq!(5, x);
     assert_eq!(5, *y);
 }
+
+
+struct CustomSmartPointer {
+    data: String,
+}
+
+impl Drop for CustomSmartPointer {
+    fn drop(&mut self) {
+        println!("Dropping CustomSmartPointer with data `{}`!", self.data);
+    }
+}
+
+fn clean_up_drop_trait() {
+    let c = CustomSmartPointer {
+        data: String::from("my stuff"),
+    };
+    let d = CustomSmartPointer {
+        data: String::from("other stuff"),
+    };
+    println!("CustomSmartPointers created.");
+    drop(c);
+    println!("CustomSmartPointer dropped before the end of main.");
+}
+
+
