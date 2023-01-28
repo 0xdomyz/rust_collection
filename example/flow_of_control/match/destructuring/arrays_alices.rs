@@ -2,6 +2,11 @@ fn main() {
     // Try changing the values in the array, or make it a slice!
     let array = [1, -2, 6];
 
+    // make a slice of the array
+    let slice = &array[..];
+
+    println!("slice: {:?}", slice);
+
     match array {
         // Binds the second and the third elements to the respective variables
         [0, second, third] =>

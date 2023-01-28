@@ -15,16 +15,15 @@ fn main() {
         Temperature::Fahrenheit(t) if t > 86 => println!("{}F is above 86 Fahrenheit", t),
         Temperature::Fahrenheit(t) => println!("{}F is below 86 Fahrenheit", t),
     }
-}
+
 
 // when checking if all patterns ar covered by the match expression
-fn main() {
     let number: u8 = 4;
 
     match number {
         i if i == 0 => println!("Zero"),
         i if i > 0 => println!("Greater than zero"),
-        // _ => unreachable!("Should never happen."),
+        _ => unreachable!("Should never happen."),
         // TODO ^ uncomment to fix compilation
     }
 }

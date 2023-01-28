@@ -1,65 +1,65 @@
-// for and range
-fn main() {
-    // `n` will take the values: 1, 2, ..., 100 in each iteration
-    for n in 1..101 {
-        if n % 15 == 0 {
-            println!("fizzbuzz");
-        } else if n % 3 == 0 {
-            println!("fizz");
-        } else if n % 5 == 0 {
-            println!("buzz");
-        } else {
-            println!("{}", n);
-        }
-    }
-}
+// // for and range
+// fn main() {
+//     // `n` will take the values: 1, 2, ..., 100 in each iteration
+//     for n in 1..101 {
+//         if n % 15 == 0 {
+//             println!("fizzbuzz");
+//         } else if n % 3 == 0 {
+//             println!("fizz");
+//         } else if n % 5 == 0 {
+//             println!("buzz");
+//         } else {
+//             println!("{}", n);
+//         }
+//     }
+// }
 
-// inclusive on both end
-fn main() {
-    // `n` will take the values: 1, 2, ..., 100 in each iteration
-    for n in 1..=100 {
-        if n % 15 == 0 {
-            println!("fizzbuzz");
-        } else if n % 3 == 0 {
-            println!("fizz");
-        } else if n % 5 == 0 {
-            println!("buzz");
-        } else {
-            println!("{}", n);
-        }
-    }
-}
+// // inclusive on both end
+// fn main() {
+//     // `n` will take the values: 1, 2, ..., 100 in each iteration
+//     for n in 1..=100 {
+//         if n % 15 == 0 {
+//             println!("fizzbuzz");
+//         } else if n % 3 == 0 {
+//             println!("fizz");
+//         } else if n % 5 == 0 {
+//             println!("buzz");
+//         } else {
+//             println!("{}", n);
+//         }
+//     }
+// }
 
 
-// for and iterator
-fn main() {
-    let names = vec!["Bob", "Frank", "Ferris"];
+// // for and iterator
+// fn main() {
+//     let names = vec!["Bob", "Frank", "Ferris"];
 
-    for name in names.iter() {
-        match name {
-            &"Ferris" => println!("There is a rustacean among us!"),
-            // TODO ^ Try deleting the & and matching just "Ferris"
-            _ => println!("Hello {}", name),
-        }
-    }
+//     for name in names.iter() {
+//         match name {
+//             &"Ferris" => println!("There is a rustacean among us!"),
+//             // TODO ^ Try deleting the & and matching just "Ferris"
+//             _ => println!("Hello {}", name),
+//         }
+//     }
     
-    println!("names: {:?}", names);
-}
+//     println!("names: {:?}", names);
+// }
 
 
-fn main() {
-    let names = vec!["Bob", "Frank", "Ferris"];
+// fn main() {
+//     let names = vec!["Bob", "Frank", "Ferris"];
 
-    for name in names.into_iter() {
-        match name {
-            "Ferris" => println!("There is a rustacean among us!"),
-            _ => println!("Hello {}", name),
-        }
-    }
+//     for name in names.into_iter() {
+//         match name {
+//             "Ferris" => println!("There is a rustacean among us!"),
+//             _ => println!("Hello {}", name),
+//         }
+//     }
     
-    println!("names: {:?}", names);
-    // FIXME ^ Comment out this line
-}
+//     // println!("names: {:?}", names);
+//     // FIXME ^ Comment out this line
+// }
 
 fn main() {
     let mut names = vec!["Bob", "Frank", "Ferris"];

@@ -3,6 +3,11 @@ fn age() -> u32 {
     15
 }
 
+// binding to destructure
+fn some_number() -> Option<u32> {
+    Some(42)
+}
+
 fn main() {
     println!("Tell me what type of person you are");
 
@@ -16,14 +21,8 @@ fn main() {
         // Nothing bound. Return the result.
         n             => println!("I'm an old person of age {:?}", n),
     }
-}
 
-// binding to destructure
-fn some_number() -> Option<u32> {
-    Some(42)
-}
 
-fn main() {
     match some_number() {
         // Got `Some` variant, match if its value, bound to `n`,
         // is equal to 42.
