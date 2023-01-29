@@ -3,6 +3,7 @@
 fn apply<F>(f: F) where
     // The closure takes no input and returns nothing.
     F: FnOnce() {
+    // F: Fn() {
     // ^ TODO: Try changing this to `Fn` or `FnMut`.
 
     f();

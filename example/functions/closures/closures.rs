@@ -2,7 +2,7 @@ fn main() {
     let outer_var = 42;
     
     // A regular function can't refer to variables in the enclosing environment
-    //fn function(i: i32) -> i32 { i + outer_var }
+    // fn function(i: i32) -> i32 { i + outer_var }
     // TODO: uncomment the line above and see the compiler error. The compiler
     // suggests that we define a closure instead.
 
@@ -17,7 +17,7 @@ fn main() {
     println!("closure_annotated: {}", closure_annotated(1));
     println!("closure_inferred: {}", closure_inferred(1));
     // Once closure's type has been inferred, it cannot be inferred again with another type.
-    //println!("cannot reuse closure_inferred with another type: {}", closure_inferred(42i64));
+    // println!("cannot reuse closure_inferred with another type: {}", closure_inferred(42i64));
     // TODO: uncomment the line above and see the compiler error.
 
     // A closure taking no arguments which returns an `i32`.

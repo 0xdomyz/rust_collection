@@ -1,12 +1,4 @@
 #![allow(unused)]
-fn main() {
-// `F` must be generic.
-fn apply<F>(f: F) where
-    F: FnOnce() {
-    f();
-}
-}
-
 
 // `F` must implement `Fn` for a closure which takes no
 // inputs and returns nothing - exactly what is required
