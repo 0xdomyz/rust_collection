@@ -74,6 +74,11 @@ mod my_mod {
             println!("called `my_mod::private_nested::restricted_function()`");
         }
     }
+
+    pub fn call_private_nested() {
+        private_nested::function();
+        private_nested::restricted_function();
+    }
 }
 
 fn function() {
@@ -96,25 +101,27 @@ fn main() {
 
     // pub(in path) items can only be called from within the module specified
     // Error! function `public_function_in_my_mod` is private
-    //my_mod::nested::public_function_in_my_mod();
+    // my_mod::nested::public_function_in_my_mod();
     // TODO ^ Try uncommenting this line
 
     // Private items of a module cannot be directly accessed, even if
     // nested in a public module:
 
     // Error! `private_function` is private
-    //my_mod::private_function();
+    // my_mod::private_function();
     // TODO ^ Try uncommenting this line
 
     // Error! `private_function` is private
-    //my_mod::nested::private_function();
+    // my_mod::nested::private_function();
     // TODO ^ Try uncommenting this line
 
     // Error! `private_nested` is a private module
-    //my_mod::private_nested::function();
+    // my_mod::private_nested::function();
     // TODO ^ Try uncommenting this line
 
     // Error! `private_nested` is a private module
-    //my_mod::private_nested::restricted_function();
+    // my_mod::private_nested::restricted_function();
     // TODO ^ Try uncommenting this line
+
+    my_mod::call_private_nested();
 }
