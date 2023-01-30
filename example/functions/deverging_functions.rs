@@ -11,6 +11,7 @@ fn main() {
                 // u32, but it is still fine, because it never returns and therefore
                 // does not violate the type requirements of the match expression.
                 false => continue,
+                // false => 0,
             };
             acc += addition;
         }

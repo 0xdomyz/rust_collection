@@ -33,11 +33,9 @@ fn main() {
     // `iter()` for arrays yields `&i32`
     println!("Find 2 in array1: {:?}", array1.iter()     .find(|&&x| x == 2));
     // `into_iter()` for arrays yields `i32`
-    println!("Find 2 in array2: {:?}", array2.into_iter().find(|&x| x == 2));
-}
+    println!("Find 2 in array2: {:?}", IntoIterator::into_iter(array2).find(|&x| x == 2));
 
-//iterator::position
-fn main() {
+    //iterator::position
     let vec = vec![1, 9, 3, 3, 13, 2];
 
     // `iter()` for vecs yields `&i32` and `position()` does not take a reference, so
