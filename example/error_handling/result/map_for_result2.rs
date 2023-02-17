@@ -1,20 +1,16 @@
-// rustc map_for_result.rs && ./map_for_result
+// rustc map_for_result2.rs && ./map_for_result2
 
 use std::num::ParseIntError;
 
-// With the return type rewritten, we use pattern matching without `unwrap()`.
+// As with `Option`, we can use combinators such as `map()`.
+// This function is otherwise identical to the one above and reads:
+// Modify n if the value is valid, otherwise pass on the error.
 fn multiply(first_number_str: &str, second_number_str: &str) -> Result<i32, ParseIntError> {
-    match first_number_str.parse::<i32>() {
-        Ok(first_number)  => {
-            match second_number_str.parse::<i32>() {
-                Ok(second_number)  => {
-                    Ok(first_number * second_number)
-                },
-                Err(e) => Err(e),
-            }
-        },
-        Err(e) => Err(e),
-    }
+    first_number_str.parse::<i32>().and_then(|first_number| {
+        second_number_str.parse::<i32>().map(
+            |second_number| first_number * second_number
+        )
+    })
 }
 
 fn print(result: Result<i32, ParseIntError>) {
