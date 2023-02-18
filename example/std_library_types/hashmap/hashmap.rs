@@ -1,0 +1,1 @@
+// rustc hashmap.rs && ./hashmap

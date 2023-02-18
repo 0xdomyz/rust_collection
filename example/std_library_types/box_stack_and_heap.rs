@@ -9,7 +9,7 @@ struct Point {
     y: f64,
 }
 
-// A Rectangle can be specified by where its top left and bottom right 
+// A Rectangle can be specified by where its top left and bottom right
 // corners are in space
 #[allow(dead_code)]
 struct Rectangle {
@@ -64,4 +64,7 @@ fn main() {
     let unboxed_point: Point = *boxed_point;
     println!("Unboxed point occupies {} bytes on the stack",
              mem::size_of_val(&unboxed_point));
+
+    println!("Boxed point occupies {} bytes on the stack",
+             mem::size_of_val(&boxed_point));
 }

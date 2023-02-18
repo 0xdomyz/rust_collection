@@ -1,0 +1,1 @@
+// rustc panic.rs && ./panic
