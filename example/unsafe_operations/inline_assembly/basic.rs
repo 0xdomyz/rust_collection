@@ -1,0 +1,1 @@
+// rustc basic.rs && ./basic

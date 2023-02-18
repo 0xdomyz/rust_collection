@@ -1,0 +1,1 @@
+// rustc efficient.rs && ./efficient

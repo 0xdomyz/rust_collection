@@ -1,0 +1,1 @@
+// rustc std.rs && ./std

@@ -1,0 +1,1 @@
+// rustc unsafe.rs && ./unsafe
