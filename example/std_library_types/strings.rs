@@ -1,0 +1,1 @@
+// rustc strings.rs && ./strings

@@ -1,0 +1,1 @@
+// rustc path.rs && ./path

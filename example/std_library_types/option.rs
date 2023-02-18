@@ -1,0 +1,1 @@
+// rustc option.rs && ./option

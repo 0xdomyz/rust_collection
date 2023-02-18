@@ -1,0 +1,1 @@
+// rustc vectors.rs && ./vectors

@@ -1,0 +1,1 @@
+// rustc hashset.rs && ./hashset

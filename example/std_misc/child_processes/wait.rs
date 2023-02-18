@@ -1,0 +1,1 @@
+// rustc wait.rs && ./wait

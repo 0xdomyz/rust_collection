@@ -1,0 +1,1 @@
+// rustc doco.rs && ./doco

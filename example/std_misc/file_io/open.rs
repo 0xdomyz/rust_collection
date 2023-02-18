@@ -1,0 +1,1 @@
+// rustc open.rs && ./open

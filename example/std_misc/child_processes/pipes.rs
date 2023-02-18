@@ -1,0 +1,1 @@
+// rustc pipes.rs && ./pipes

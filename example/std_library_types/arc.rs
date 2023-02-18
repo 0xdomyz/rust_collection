@@ -1,0 +1,1 @@
+// rustc arc.rs && ./arc
